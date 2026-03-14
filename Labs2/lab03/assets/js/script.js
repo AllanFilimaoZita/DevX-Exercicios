@@ -1,14 +1,23 @@
-// Pegar o elemento principal
-const elemento = document.querySelector('.card');
+// Pegando e Armazenando o formulário
+const form = document.getElementById('contactForm');
 
-// Pegar o botão remover
-const paragraph = document.querySelector('p');
+// Cancelando o restar do Formulário
+form.addEventListener('submit', e => {
+    e.preventDefault();
 
-// Pegar o elemento de referencia
-// const remover = elemento.closest('div');
+    // Pegando e Armazenando os Elementos do Formulário
+    const nome = document.getElementById('nome');
+    const idade = document.getElementById('idade');
 
-const remover = paragraph.parentElement;
+    // Pegando a Div da mensagem
+    const mensagem = document.getElementById('mensagem')
 
-const button = document.querySelector('button').addEventListener('click', function() {
-    remover.remove()
+    // Pegando os Valores do Input
+    let nomeValor = nome.value.trim();
+    let idadeValor =  idade.value.trim();
+
+    mensagem.innerHTML = `Obrigado ${nomeValor}`;
+
+    form.reset()
+
 })
