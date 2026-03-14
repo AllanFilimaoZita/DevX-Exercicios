@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    gap: 1rem;
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 1px solid black;
+    transition: 0.3s;
+}
+
+button:hover {
+    color: white;
+    font-size: 0.9rem;
+    background-color: black;
+}
