@@ -1,11 +1,12 @@
-let aluno = {
-    nome: 'Allan',
-    idade: 19,
-    cidade: 'Matola C',
-    curso: 'Programação'
-}
+let filmes = [
+    {titulo: 'A Procura da Felicidade', ano: 2006},
+    {titulo: 'O Homem que mudou o Jogo', ano: 2011}
+]
 
-aluno.cidade = 'Cidade da Matola';
-aluno.experiencia = 'Júnior';
+console.log(filmes[0].titulo)
 
-console.log(aluno.nome)
+filmes.push({titulo: 'Sem Limites', ano: 2011})
+
+filmes[0].ano = 2024
+
+console.log(filmes)
