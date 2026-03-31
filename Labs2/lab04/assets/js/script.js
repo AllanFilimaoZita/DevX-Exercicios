@@ -1,27 +1,30 @@
-// Pegar o Formulário de Tarefas
 const taskForm = document.getElementById('taskForm');
-
-// Criando um Array Vazio
 let listTask = [];
 
-// Cancelar o Reload do Formulário
+// Função render: lê o array e redesenha a lista
+function render() {
+    const lista = document.getElementById('listTask');
+
+    // Para cada item do array, cria um <li>
+    lista.innerHTML = listTask
+        .map(task => `<li>${task}</li>`)
+        .join('');
+}
+
 taskForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    // Pegar o Elemnto Input
     const inputTask = document.getElementById('task');
+    const task = inputTask.value.trim();
 
-    // Pegar o Valor do Elemento Input
-    const task = inputTask.value.trim()
+    // Validação: não adiciona tarefa vazia
+    if (!task) return;
 
-    // Pegar o Paragrafo
-    const paragrafo = document.getElementById('listTask');
-
-    // Reiniciando o Formulário
     taskForm.reset();
 
+    // 1. Atualiza o estado
     listTask.push(task);
 
-    paragrafo.innerHTML = listTask
-
-})
+    // 2. Redesenha a UI
+    render();
+});
